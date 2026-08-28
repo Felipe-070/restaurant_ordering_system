@@ -1,26 +1,26 @@
 {
   "name": "restaurant_ordering_system",
   "version": "1.0.0",
-  "description": "Projeto da disciplina de deselvolvimento de Backend, 4P - Engenharia de Sostware",
+  "description": "Projeto da disciplina de Desenvolvimento Back-End, 4P - Engenharia de Software - Campus SJP",
   "keywords": [
     "back-end",
     "ts",
     "js",
     "API",
-    "restaurant",
+    "restautant",
     "ordering",
     "microservice"
   ],
-  "homepage": "https://github.com/Felipe-070/restaurant_ordering_system#readme",
+  "homepage": "https://github.com/matthewrpereira/restaurant_ordering_system_sjp#readme",
   "bugs": {
-    "url": "https://github.com/Felipe-070/restaurant_ordering_system/issues"
+    "url": "https://github.com/matthewrpereira/restaurant_ordering_system_sjp/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Felipe-070/restaurant_ordering_system.git"
+    "url": "git+https://github.com/matthewrpereira/restaurant_ordering_system_sjp.git"
   },
   "license": "ISC",
-  "author": "Felipe Teixeira",
+  "author": "Mateus R. Pereira",
   "type": "module",
   "main": "dist/server.js",
   "scripts": {
@@ -30,8 +30,12 @@
     "start": "node dist/server.js"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
     "@types/node": "^26.2.0",
     "tsx": "^4.23.12",
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
