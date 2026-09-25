@@ -2,12 +2,97 @@ import supabase from "../config/supabase.js";
 
 async function findALL() {
     const { data, error } = await supabase.from("products").select("*");
+
     if (error) {
         throw error;
     }
+
+    return data;
+}
+
+async function findById(id: string) {
+    const { data, error } = await supabase
+        .from("products")
+        .select("*")
+        .eq("id", id)
+        .single();
+
+    if (error) {
+        throw error;
+    }
+
+    return data;
+}
+
+async function create(
+    product: {
+        category_id: string;
+        title: string;
+        description: string;
+        price: number;
+        image: string | null;
+        available: boolean;
+        active: boolean;
+    }
+) {
+    const { data, error } = await supabase
+        .from("products")
+        .insert(product)
+        .select()
+        .single();
+
+    if (error) {
+        throw error;
+    }
+
+    return data;
+}
+
+async function update(
+    id: string,
+    product: {
+        category_id: string;
+        title: string;
+        description: string;
+        price: number;
+        image: string | null;
+        available: boolean;
+        active: boolean;
+    }
+) {
+    const { data, error } = await supabase
+        .from("products")
+        .update(product)
+        .eq("id", id)
+        .select()
+        .single();
+
+    if (error) {
+        throw error;
+    }
+
+    return data;
+}
+
+async function remove(id: string) {
+    const { data, error } = await supabase
+        .from("products")
+        .delete()
+        .eq("id", id)
+        .select();
+
+    if (error) {
+        console.error("Erro do Supabase ao remover produto:", error);
+        throw error;
+    }
+
     return data;
 }
 
 export default {
     findALL,
+    findById,
+    create,
+    update,
+    remove,
 };
