@@ -1,0 +1,10 @@
+package-lock.json
+package.json
+src/app.ts
+src/controller/CategoryController.ts
+src/errors/NotFoundError.ts
+src/model/Category.ts
+src/model/Product.ts
+src/repositories/CategoryRepository.ts
+src/routes/categoryRoutes.ts
+tsconfig.json
