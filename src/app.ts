@@ -1,3 +1,4 @@
+
 import express from "express";
 import swaggerUi from "swagger-ui-express";
 import categoryRoutes from "./routes/categoryRoutes.js";
@@ -19,12 +20,13 @@ app.get("/", (req, res) => {
 // ==============================
 // Swagger Documentation
 // ==============================
+
 app.use(
     "/api-docs",
     swaggerUi.serve,
     swaggerUi.setup(swaggerSpec)
-),
-  
+);
+
 // ==============================
 // Routes
 // ==============================
