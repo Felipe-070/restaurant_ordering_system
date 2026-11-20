@@ -1,3 +1,4 @@
+
 import { fileURLToPath } from "node:url";
 import swaggerJsdoc from "swagger-jsdoc";
 import type { Options } from "swagger-jsdoc";
@@ -10,7 +11,12 @@ const options: Options = {
             version: "1.0.0",
             description: "Documentação da API do sistema de pedidos do restaurante.",
         },
-        servers: [{ url: "http://localhost:3000" }],
+        servers: [
+            {
+                url: "https://restaurant-ordering-system-dusky.vercel.app",
+                description: "Servidor de produção",
+            },
+        ],
         components: {
             schemas: {
                 Category: {
@@ -78,6 +84,7 @@ const options: Options = {
  *         description: Categoria criada
  *       400:
  *         description: Dados inválidos
+ *
  * /categories/search:
  *   get:
  *     summary: Busca categorias por palavra-chave
@@ -92,6 +99,7 @@ const options: Options = {
  *         description: Categorias encontradas
  *       400:
  *         description: Palavra-chave não informada
+ *
  * /categories/{id}:
  *   parameters:
  *     - in: path
@@ -136,6 +144,7 @@ const options: Options = {
  *         description: Categoria removida
  *       404:
  *         description: Categoria não encontrada
+ *
  * /products:
  *   get:
  *     summary: Lista produtos
@@ -164,6 +173,7 @@ const options: Options = {
  *         description: Produto criado
  *       400:
  *         description: Dados inválidos
+ *
  * /products/search:
  *   get:
  *     summary: Busca produtos por palavra-chave
@@ -178,6 +188,7 @@ const options: Options = {
  *         description: Produtos encontrados
  *       400:
  *         description: Palavra-chave não informada
+ *
  * /products/{id}:
  *   parameters:
  *     - in: path
@@ -225,4 +236,5 @@ const options: Options = {
  *       404:
  *         description: Produto não encontrado
  */
+
 export default swaggerJsdoc(options);
